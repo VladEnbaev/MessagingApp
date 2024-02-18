@@ -34,16 +34,18 @@ final class ChatsListViewModel: ObservableObject {
         switch action {
         case .performInitialRequests:
             state.isLoading = true
+            print("Loading...")
             fetchAllConversations()
         case .chatTapped(let chatroom):
             print(chatroom)
             break
         case .editButtonTapped:
-            print("Edit")
+            print("Edit Tapped!")
         case .newChatButtonTapped:
-            print("New")
+            print("New Tapped!")
         case .refresh:
             // TODO: - Create pagination
+            print("Refreshing...")
             fetchAllConversations()
         }
     }

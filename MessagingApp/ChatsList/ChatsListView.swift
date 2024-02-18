@@ -58,9 +58,6 @@ public struct ChatListSceneView: View {
         }
         .scrollContentBackground(.visible)
         .safeAreaInset(edge: .top, content: { header })
-        .onAppear {
-            viewModel.action.send(.performInitialRequests)
-        }
         .onAppear(firstAppearAction: {
             viewModel.action.send(.performInitialRequests)
         }, reAppearAction: {
