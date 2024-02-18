@@ -12,7 +12,6 @@ enum Resources {
     enum Images {
         static let arrowRightIcon = "arrowRight"
         static let editIcon = "editIcon"
-        static let readedIcon = "readedIcon"
         static let callsTabIcon = "callsTabIcon"
         static let cameraTabIcon = "cameraTabIcon"
         static let chatsTabIcon = "chatsTabIcon"

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "voiceMessageIcon.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

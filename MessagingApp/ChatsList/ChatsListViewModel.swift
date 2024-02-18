@@ -52,6 +52,7 @@ final class ChatsListViewModel: ObservableObject {
         Task(priority: .high) { @MainActor [unowned self] in
             do {
                 try await Task.sleep(nanoseconds: 1000)
+                state.chatRooms = ChatRoomInfo.mocChatRooms
                 state.isLoading = false
             } catch {
                 state.isLoading = false

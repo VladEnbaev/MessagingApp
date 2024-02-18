@@ -13,7 +13,7 @@ private enum Constants {
     
     
     enum Title {
-        static let text = "Chat"
+        static let text = "Chats"
     }
     
     enum TopButtons {
@@ -31,6 +31,7 @@ private enum Constants {
     
     enum EditButton {
         static let text = "Edit"
+        static let size: CGFloat = 22.15
     }
     
     enum NewMessageButton {
@@ -49,31 +50,14 @@ public struct ChatListSceneView: View {
     // MARK: - Life Cycle
     
     public var body: some View {
-        NavigationStack {
-            ScrollView(showsIndicators: false) {
-                LazyVStack(spacing: .zero) {
-                    chatsView
-                }
-                .padding(.bottom, Constants.bottomPadding)
+        ScrollView(showsIndicators: false) {
+            LazyVStack(spacing: .zero) {
+                topButtonsView
+                chatsView
             }
+            .padding(.bottom, Constants.bottomPadding)
         }
-        .navigationTitle(Constants.Title.text)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button(Constants.EditButton.text) {
-                    print("Help tapped!")
-                }
-            }
-            
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    // action
-                } label: {
-                    Image(Constants.NewMessageButton.iconName)
-                }
-
-            }
-        }
+        .safeAreaInset(edge: .top, content: { header })
         .onAppear {
             viewModel.action.send(.performInitialRequests)
         }
@@ -89,12 +73,11 @@ public struct ChatListSceneView: View {
             Button(Constants.TopButtons.titleL) {
                 //action
             }
-            
+            Spacer()
             Button(Constants.TopButtons.titleR) {
                 //action
             }
         }
-        .background(Color.white)
         .padding(.vertical, Constants.TopButtons.vPadding)
         .padding(.horizontal, Constants.TopButtons.hPadding)
     }
@@ -109,10 +92,30 @@ public struct ChatListSceneView: View {
                 .padding(.top, 100)
         } else {
             ForEach(viewModel.state.chatRooms, id: \.id) { info in
-//                ChatCellView(chatRoomInfo: info)
-//                    .onTapGesture { viewModel.action.send(.chatTapped(info)) }
+                ChatCellView(chatRoomInfo: info)
+                    .onTapGesture { viewModel.action.send(.chatTapped(info)) }
             }
         }
+    }
+    
+    private var header: some View {
+        VStack(spacing: 0) {
+            NavigationHeader(title: Constants.Title.text) {
+                Button {
+                    // action
+                } label: {
+                    Image(Constants.NewMessageButton.iconName)
+                }
+                .frame(width: Constants.EditButton.size,
+                       height: Constants.EditButton.size)
+            } leadingContent: {
+                Button(Constants.EditButton.text) {
+                    print("Edit tapped!")
+                }
+            }
+            Divider()
+        }
+        .background(Material.bar)
     }
 }
 
