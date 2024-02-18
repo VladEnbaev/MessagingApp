@@ -9,15 +9,15 @@ import SwiftUI
 
 private enum Constants {
     
-    static let topPadding: CGFloat = 10.0
-    static let bottomSpacing: CGFloat = 8.0
-    static let trailingPadding: CGFloat = 8.30
-    static let leadingPadding: CGFloat = 17.0
-    static let contentHeight: CGFloat = 67.0
+    static let topPadding: CGFloat = 8.0
+    static let trailingPadding: CGFloat = 18
+    static let leadingPadding: CGFloat = 16.0
+    static let contentHeight: CGFloat = 74.0
+    static let bottomSpacing: CGFloat = 4.5
     
     enum Image {
         static let spacing: CGFloat = 12.0
-        static let height: CGFloat = 45.0
+        static let height: CGFloat = 52.0
         static let topPadding: CGFloat = 4.0
     }
     
@@ -28,15 +28,20 @@ private enum Constants {
     enum LastMessage {
         static let padding: CGFloat = 4.0
         static let trailingPadding: CGFloat = 14.0
-        static let font = Font.system(size: 13)
+        static let font = Font.system(size: 14)
         static let textColor = Color.secondary
         static let heigth: CGFloat = 42
     }
     
+    enum Date {
+        static let font = Font.system(size: 14)
+        static let textColor = Color.secondary
+    }
+    
     enum Arrow {
         static let image = Resources.Images.arrowRightIcon
-        static let height: CGFloat = 16.5
-        static let width: CGFloat = 22.0
+        static let height: CGFloat = 12
+        static let width: CGFloat = 7
     }
 }
 
@@ -54,31 +59,40 @@ struct ChatCellView: View {
     var body: some View {
         HStack(alignment: .top, spacing: Constants.Image.spacing) {
             imageView
-                .padding(.top, Constants.Image.topPadding)
             VStack(spacing: Constants.bottomSpacing) {
-                VStack(spacing: Constants.LastMessage.padding) {
-                    topInfoView
-                    messageInfoView
+                HStack(spacing: 10) {
+                    mainInfoView
+                    arrowImage
                 }
-                .frame(height: Constants.contentHeight, alignment: .top)
+                .padding(.trailing, Constants.trailingPadding)
                 Divider()
             }
         }
         .background(Rectangle().fill(Color.white))
         .padding(.top, Constants.topPadding)
         .padding(.leading, Constants.leadingPadding)
-        .padding(.trailing, Constants.trailingPadding)
+        .frame(height: Constants.contentHeight, alignment: .top)
+    }
+    
+    private var mainInfoView: some View {
+        VStack(spacing: .zero) {
+            topInfoView
+            lastMessageView
+                .frame(maxHeight: .infinity, alignment: .center)
+        }
     }
     
     private var imageView: some View {
         Circle()
-            .fill(.blue)
+            .fill(.indigo)
             .frame(width: Constants.Image.height, height: Constants.Image.height)
             .overlay {
                 Image(systemName: "person.fill")
                     .resizable()
+                    .foregroundStyle(.white)
                     .padding(9)
             }
+            .padding(.top, Constants.Image.topPadding)
     }
     
     private var topInfoView: some View {
@@ -88,29 +102,46 @@ struct ChatCellView: View {
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .leading)
             Text(formatDate(lastMessage.date) ?? "")
-                .font(Constants.LastMessage.font)
-                .foregroundColor(Constants.LastMessage.textColor)
+                .font(Constants.Date.font)
+                .foregroundColor(Constants.Date.textColor)
                 .lineLimit(1)
-            Image(Constants.Arrow.image)
-                .resizable()
-                .frame(
-                    width: Constants.Arrow.width,
-                    height: Constants.Arrow.height
-                )
         }
     }
     
+    private var lastMessageView: some View {
+        lastMessageText
+            .font(Constants.LastMessage.font)
+            .foregroundColor(Constants.LastMessage.textColor)
+            .lineLimit(2)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .multilineTextAlignment(.leading)
+            .padding(.trailing, Constants.LastMessage.trailingPadding)
+    }
+    
     @ViewBuilder
-    private var messageInfoView: some View {
-        HStack(alignment: .top) {
-            Text(lastMessage.content)
-                .font(Constants.LastMessage.font)
-                .foregroundColor(Constants.LastMessage.textColor)
-                .lineLimit(2)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .multilineTextAlignment(.leading)
+    private var lastMessageText: some View {
+        if lastMessage.type == .voice {
+            HStack(spacing: .zero) {
+                Image(lastMessage.type.iconName)
+                Text(" ")
+                Text(lastMessage.displayedInfo)
+            }
+        } else {
+            (
+                Text(Image(lastMessage.type.iconName))
+                + Text(" ")
+                + Text(lastMessage.displayedInfo)
+            )
         }
-        .padding(.trailing, Constants.LastMessage.trailingPadding)
+    }
+    
+    private var arrowImage: some View {
+        Image(Constants.Arrow.image)
+            .resizable()
+            .frame(
+                width: Constants.Arrow.width,
+                height: Constants.Arrow.height
+            )
     }
     
     func formatDate(_ date: Date) -> String? {

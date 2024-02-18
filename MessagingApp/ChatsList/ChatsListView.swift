@@ -9,16 +9,13 @@ import SwiftUI
 
 private enum Constants {
     
-    static let bottomPadding: CGFloat = 100.0
-    
-    
     enum Title {
         static let text = "Chats"
     }
     
     enum TopButtons {
-        static let titleL = "Broadcast Lists"
-        static let titleR = "New Group"
+        static let titleLists = "Broadcast Lists"
+        static let titleGroup = "New Group"
         static let foregroundColor = Color.blue
         static let vPadding: CGFloat = 12
         static let hPadding: CGFloat = 16
@@ -55,7 +52,6 @@ public struct ChatListSceneView: View {
                 topButtonsView
                 chatsView
             }
-            .padding(.bottom, Constants.bottomPadding)
         }
         .safeAreaInset(edge: .top, content: { header })
         .onAppear {
@@ -70,11 +66,11 @@ public struct ChatListSceneView: View {
     
     var topButtonsView: some View {
         HStack {
-            Button(Constants.TopButtons.titleL) {
+            Button(Constants.TopButtons.titleLists) {
                 //action
             }
             Spacer()
-            Button(Constants.TopButtons.titleR) {
+            Button(Constants.TopButtons.titleGroup) {
                 //action
             }
         }

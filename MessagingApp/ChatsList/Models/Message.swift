@@ -12,7 +12,7 @@ import Foundation
 public struct Message: Decodable, Equatable {
     public let id: Int
     public let type: MessageType
-    public let content: String
+    public let displayedInfo: String
     public let date: Date
 }
 
