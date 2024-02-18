@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF24E9382B823B8B00A8969B /* MessagingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9372B823B8B00A8969B /* MessagingAppApp.swift */; };
+		FF24E9382B823B8B00A8969B /* MessagingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9372B823B8B00A8969B /* MessagingApp.swift */; };
 		FF24E93A2B823B8C00A8969B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9392B823B8C00A8969B /* ContentView.swift */; };
 		FF24E93C2B823B8D00A8969B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF24E93B2B823B8D00A8969B /* Assets.xcassets */; };
 		FF24E93F2B823B8D00A8969B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF24E93E2B823B8D00A8969B /* Preview Assets.xcassets */; };
+		FF24E9512B823D1A00A8969B /* ChatsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9502B823D1A00A8969B /* ChatsListViewModel.swift */; };
+		FF24E9592B823EE300A8969B /* ChatsListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9582B823EE300A8969B /* ChatsListBuilder.swift */; };
+		FF24E95B2B82452C00A8969B /* ChatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E95A2B82452C00A8969B /* ChatCellView.swift */; };
+		FF24E95E2B82487500A8969B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E95D2B82487500A8969B /* Resources.swift */; };
+		FF24E9602B8251B200A8969B /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E95F2B8251B200A8969B /* ChatsListView.swift */; };
+		FF24E9622B8258FB00A8969B /* OnFirstAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9612B8258FB00A8969B /* OnFirstAppearModifier.swift */; };
+		FF24E9642B825A6900A8969B /* ChatRoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9632B825A6900A8969B /* ChatRoomInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF24E9342B823B8B00A8969B /* MessagingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessagingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF24E9372B823B8B00A8969B /* MessagingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingAppApp.swift; sourceTree = "<group>"; };
+		FF24E9372B823B8B00A8969B /* MessagingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingApp.swift; sourceTree = "<group>"; };
 		FF24E9392B823B8C00A8969B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF24E93B2B823B8D00A8969B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF24E93E2B823B8D00A8969B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF24E9502B823D1A00A8969B /* ChatsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListViewModel.swift; sourceTree = "<group>"; };
+		FF24E9582B823EE300A8969B /* ChatsListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListBuilder.swift; sourceTree = "<group>"; };
+		FF24E95A2B82452C00A8969B /* ChatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellView.swift; sourceTree = "<group>"; };
+		FF24E95D2B82487500A8969B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		FF24E95F2B8251B200A8969B /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
+		FF24E9612B8258FB00A8969B /* OnFirstAppearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppearModifier.swift; sourceTree = "<group>"; };
+		FF24E9632B825A6900A8969B /* ChatRoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +65,10 @@
 		FF24E9362B823B8B00A8969B /* MessagingApp */ = {
 			isa = PBXGroup;
 			children = (
-				FF24E9372B823B8B00A8969B /* MessagingAppApp.swift */,
+				FF24E9372B823B8B00A8969B /* MessagingApp.swift */,
 				FF24E9392B823B8C00A8969B /* ContentView.swift */,
-				FF24E93B2B823B8D00A8969B /* Assets.xcassets */,
+				FF24E9452B823BF000A8969B /* ChatsList */,
+				FF24E95C2B82485800A8969B /* Resources */,
 				FF24E93D2B823B8D00A8969B /* Preview Content */,
 			);
 			path = MessagingApp;
@@ -65,6 +80,44 @@
 				FF24E93E2B823B8D00A8969B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF24E9452B823BF000A8969B /* ChatsList */ = {
+			isa = PBXGroup;
+			children = (
+				FF24E9532B823D6D00A8969B /* UIComponents */,
+				FF24E9522B823D6000A8969B /* Models */,
+				FF24E9582B823EE300A8969B /* ChatsListBuilder.swift */,
+				FF24E95F2B8251B200A8969B /* ChatsListView.swift */,
+				FF24E9502B823D1A00A8969B /* ChatsListViewModel.swift */,
+			);
+			path = ChatsList;
+			sourceTree = "<group>";
+		};
+		FF24E9522B823D6000A8969B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF24E9632B825A6900A8969B /* ChatRoomInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF24E9532B823D6D00A8969B /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FF24E95A2B82452C00A8969B /* ChatCellView.swift */,
+				FF24E9612B8258FB00A8969B /* OnFirstAppearModifier.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		FF24E95C2B82485800A8969B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF24E93B2B823B8D00A8969B /* Assets.xcassets */,
+				FF24E95D2B82487500A8969B /* Resources.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF24E9512B823D1A00A8969B /* ChatsListViewModel.swift in Sources */,
+				FF24E9602B8251B200A8969B /* ChatsListView.swift in Sources */,
+				FF24E95B2B82452C00A8969B /* ChatCellView.swift in Sources */,
 				FF24E93A2B823B8C00A8969B /* ContentView.swift in Sources */,
-				FF24E9382B823B8B00A8969B /* MessagingAppApp.swift in Sources */,
+				FF24E9622B8258FB00A8969B /* OnFirstAppearModifier.swift in Sources */,
+				FF24E9382B823B8B00A8969B /* MessagingApp.swift in Sources */,
+				FF24E95E2B82487500A8969B /* Resources.swift in Sources */,
+				FF24E9642B825A6900A8969B /* ChatRoomInfo.swift in Sources */,
+				FF24E9592B823EE300A8969B /* ChatsListBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
