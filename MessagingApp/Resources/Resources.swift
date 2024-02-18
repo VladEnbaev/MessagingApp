@@ -17,6 +17,8 @@ enum Resources {
         static let chatsTabIcon = "chatsTabIcon"
         static let settingsTabIcon = "settingsTabIcon"
         static let statusTabIcon = "statusTabIcon"
+        static let moreIcon = "moreIcon"
+        static let archiveIcon = "archiveIcon"
     }
     
     enum Colors {

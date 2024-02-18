@@ -57,11 +57,34 @@ public struct ChatListSceneView: View {
         .onAppear {
             viewModel.action.send(.performInitialRequests)
         }
+        .refreshable {
+            viewModel.action.send(.refresh)
+        }
         .onAppear(firstAppearAction: {
             viewModel.action.send(.performInitialRequests)
         }, reAppearAction: {
             viewModel.action.send(.refresh)
         })
+    }
+    
+    private var header: some View {
+        VStack(spacing: 0) {
+            NavigationHeader(title: Constants.Title.text) {
+                Button {
+                    // action
+                } label: {
+                    Image(Constants.NewMessageButton.iconName)
+                }
+                .frame(width: Constants.EditButton.size,
+                       height: Constants.EditButton.size)
+            } leadingContent: {
+                Button(Constants.EditButton.text) {
+                    print("Edit tapped!")
+                }
+            }
+            Divider()
+        }
+        .background(Material.bar)
     }
     
     var topButtonsView: some View {
@@ -90,28 +113,46 @@ public struct ChatListSceneView: View {
             ForEach(viewModel.state.chatRooms, id: \.id) { info in
                 ChatCellView(chatRoomInfo: info)
                     .onTapGesture { viewModel.action.send(.chatTapped(info)) }
+                    .addSwipeAction(edge: .trailing) {
+                        HStack(spacing: .zero) {
+                            moreButton
+                            archiveButton
+                        }
+                    }
             }
         }
     }
     
-    private var header: some View {
-        VStack(spacing: 0) {
-            NavigationHeader(title: Constants.Title.text) {
-                Button {
-                    // action
-                } label: {
-                    Image(Constants.NewMessageButton.iconName)
-                }
-                .frame(width: Constants.EditButton.size,
-                       height: Constants.EditButton.size)
-            } leadingContent: {
-                Button(Constants.EditButton.text) {
-                    print("Edit tapped!")
-                }
+    var archiveButton: some View {
+        Button {
+            print("Archive Tapped!")
+        } label: {
+            VStack(spacing: 6) {
+                Image(Resources.Images.archiveIcon)
+                Text("Archive")
+                    .font(.system(size: 14))
             }
-            Divider()
         }
-        .background(Material.bar)
+        .frame(width: 74)
+        .frame(maxHeight: .infinity)
+        .foregroundStyle(.white)
+        .background(Color("buttonBlue"))
+    }
+    
+    var moreButton: some View {
+        Button {
+            print("More Tapped!")
+        } label: {
+            VStack(spacing: 6) {
+                Image(Resources.Images.moreIcon)
+                Text("More")
+                    .font(.system(size: 14))
+            }
+        }
+        .frame(width: 74)
+        .frame(maxHeight: .infinity)
+        .foregroundStyle(.white)
+        .background(Color("buttonGrey"))
     }
 }
 
