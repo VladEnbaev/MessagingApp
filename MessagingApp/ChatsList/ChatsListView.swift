@@ -53,12 +53,13 @@ public struct ChatListSceneView: View {
                 chatsView
             }
         }
+        .refreshable {
+            viewModel.action.send(.refresh)
+        }
+        .scrollContentBackground(.visible)
         .safeAreaInset(edge: .top, content: { header })
         .onAppear {
             viewModel.action.send(.performInitialRequests)
-        }
-        .refreshable {
-            viewModel.action.send(.refresh)
         }
         .onAppear(firstAppearAction: {
             viewModel.action.send(.performInitialRequests)
@@ -90,15 +91,16 @@ public struct ChatListSceneView: View {
     var topButtonsView: some View {
         HStack {
             Button(Constants.TopButtons.titleLists) {
-                //action
+                print("Lists Tapped!")
             }
             Spacer()
             Button(Constants.TopButtons.titleGroup) {
-                //action
+                print("Group Tapped!")
             }
         }
         .padding(.vertical, Constants.TopButtons.vPadding)
         .padding(.horizontal, Constants.TopButtons.hPadding)
+        .background(.white)
     }
     
     @ViewBuilder
@@ -120,6 +122,7 @@ public struct ChatListSceneView: View {
                         }
                     }
             }
+            .background(.white)
         }
     }
     

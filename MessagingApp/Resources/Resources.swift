@@ -24,6 +24,7 @@ enum Resources {
     enum Colors {
         static let primaryText = Color.primary
         static let secondaryText = Color.secondary
+        static let screenBackground = Color("screenBackground")
     }
 }
 

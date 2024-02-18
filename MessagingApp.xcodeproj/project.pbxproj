@@ -25,6 +25,7 @@
 		FF24E9722B82A87100A8969B /* SwipeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E96E2B82A87000A8969B /* SwipeActions.swift */; };
 		FF24E9732B82A87100A8969B /* ValueChangedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E96F2B82A87000A8969B /* ValueChangedModifier.swift */; };
 		FF24E9752B82AD5700A8969B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF24E9742B82AB4A00A8969B /* Colors.xcassets */; };
+		FF24E9772B82B07700A8969B /* TabSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9762B82B07700A8969B /* TabSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		FF24E96E2B82A87000A8969B /* SwipeActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActions.swift; sourceTree = "<group>"; };
 		FF24E96F2B82A87000A8969B /* ValueChangedModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueChangedModifier.swift; sourceTree = "<group>"; };
 		FF24E9742B82AB4A00A8969B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		FF24E9762B82B07700A8969B /* TabSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				FF24E9372B823B8B00A8969B /* MessagingApp.swift */,
-				FF24E9392B823B8C00A8969B /* ContentView.swift */,
+				FF24E9782B82B08800A8969B /* TabBar */,
 				FF24E9452B823BF000A8969B /* ChatsList */,
 				FF24E9522B823D6000A8969B /* Models */,
 				FF24E95C2B82485800A8969B /* Resources */,
@@ -165,6 +167,15 @@
 			path = SwipeActions;
 			sourceTree = "<group>";
 		};
+		FF24E9782B82B08800A8969B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FF24E9392B823B8C00A8969B /* ContentView.swift */,
+				FF24E9762B82B07700A8969B /* TabSection.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +254,7 @@
 				FF24E9682B828A8500A8969B /* NavigationHeader.swift in Sources */,
 				FF24E95B2B82452C00A8969B /* ChatCellView.swift in Sources */,
 				FF24E93A2B823B8C00A8969B /* ContentView.swift in Sources */,
+				FF24E9772B82B07700A8969B /* TabSection.swift in Sources */,
 				FF24E9622B8258FB00A8969B /* OnFirstAppearModifier.swift in Sources */,
 				FF24E9382B823B8B00A8969B /* MessagingApp.swift in Sources */,
 				FF24E95E2B82487500A8969B /* Resources.swift in Sources */,

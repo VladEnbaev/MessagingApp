@@ -84,13 +84,13 @@ struct ChatCellView: View {
     
     private var imageView: some View {
         Circle()
-            .fill(.indigo)
+            .fill(.indigo.opacity(0.8))
             .frame(width: Constants.Image.height, height: Constants.Image.height)
             .overlay {
                 Image(systemName: "person.fill")
                     .resizable()
                     .foregroundStyle(.white)
-                    .padding(9)
+                    .padding(12)
             }
             .padding(.top, Constants.Image.topPadding)
     }

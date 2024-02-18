@@ -12,7 +12,7 @@ import SwiftUI
 struct MessagingApp: App {
     var body: some Scene {
         WindowGroup {
-            ChatsListBuilder.createChatListScene()
+            MainTabBarView()
         }
     }
 }
