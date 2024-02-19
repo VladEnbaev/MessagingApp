@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF24E9382B823B8B00A8969B /* MessagingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9372B823B8B00A8969B /* MessagingApp.swift */; };
-		FF24E93A2B823B8C00A8969B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9392B823B8C00A8969B /* ContentView.swift */; };
+		FF24E93A2B823B8C00A8969B /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9392B823B8C00A8969B /* MainTabBarView.swift */; };
 		FF24E93C2B823B8D00A8969B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF24E93B2B823B8D00A8969B /* Assets.xcassets */; };
 		FF24E93F2B823B8D00A8969B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF24E93E2B823B8D00A8969B /* Preview Assets.xcassets */; };
 		FF24E9512B823D1A00A8969B /* ChatsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF24E9502B823D1A00A8969B /* ChatsListViewModel.swift */; };
@@ -31,7 +31,7 @@
 /* Begin PBXFileReference section */
 		FF24E9342B823B8B00A8969B /* MessagingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessagingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF24E9372B823B8B00A8969B /* MessagingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingApp.swift; sourceTree = "<group>"; };
-		FF24E9392B823B8C00A8969B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF24E9392B823B8C00A8969B /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		FF24E93B2B823B8D00A8969B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF24E93E2B823B8D00A8969B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF24E9502B823D1A00A8969B /* ChatsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListViewModel.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				FF24E9372B823B8B00A8969B /* MessagingApp.swift */,
-				FF24E9782B82B08800A8969B /* TabBar */,
+				FF24E9782B82B08800A8969B /* MainScene */,
 				FF24E9452B823BF000A8969B /* ChatsList */,
 				FF24E9522B823D6000A8969B /* Models */,
 				FF24E95C2B82485800A8969B /* Resources */,
@@ -167,13 +167,13 @@
 			path = SwipeActions;
 			sourceTree = "<group>";
 		};
-		FF24E9782B82B08800A8969B /* TabBar */ = {
+		FF24E9782B82B08800A8969B /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
-				FF24E9392B823B8C00A8969B /* ContentView.swift */,
+				FF24E9392B823B8C00A8969B /* MainTabBarView.swift */,
 				FF24E9762B82B07700A8969B /* TabSection.swift */,
 			);
-			path = TabBar;
+			path = MainScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +253,7 @@
 				FF24E9602B8251B200A8969B /* ChatsListView.swift in Sources */,
 				FF24E9682B828A8500A8969B /* NavigationHeader.swift in Sources */,
 				FF24E95B2B82452C00A8969B /* ChatCellView.swift in Sources */,
-				FF24E93A2B823B8C00A8969B /* ContentView.swift in Sources */,
+				FF24E93A2B823B8C00A8969B /* MainTabBarView.swift in Sources */,
 				FF24E9772B82B07700A8969B /* TabSection.swift in Sources */,
 				FF24E9622B8258FB00A8969B /* OnFirstAppearModifier.swift in Sources */,
 				FF24E9382B823B8B00A8969B /* MessagingApp.swift in Sources */,

@@ -53,7 +53,7 @@ final class ChatsListViewModel: ObservableObject {
     private func fetchAllConversations() {
         Task(priority: .high) { @MainActor [unowned self] in
             do {
-                try await Task.sleep(nanoseconds: 1000)
+                try await Task.sleep(nanoseconds: 10)
                 state.chatRooms = ChatRoomInfo.mocChatRooms
                 state.isLoading = false
             } catch {

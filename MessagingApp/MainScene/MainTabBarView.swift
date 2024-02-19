@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainTabBarView.swift
 //  MessagingApp
 //
 //  Created by Vlad Gradskiy on 18.02.2024.
